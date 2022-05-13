@@ -1,0 +1,102 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 0 20vw;
+    background-image: url(https://kartinkin.net/uploads/posts/2021-01/1610205929_6-p-spokoinii-zelenii-fon-10.jpg);
+}
+h1{
+    text-align: center;
+    margin: 2vw auto;
+    color: darkolivegreen;
+}
+
+.wrapper{
+    height: 50vh;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider{
+    background-color: gainsboro;
+    height: inherit;
+    overflow: hidden;
+    width: inherit;
+    position: relative;
+    margin-bottom: 4vh;
+}
+
+.wrapper > input {
+    display: none;
+}
+.slides{
+    height: inherit;
+    position: absolute;
+    width: inherit;
+    opacity: 0;
+    z-index: 0;
+    transform: translateX(100vw);
+    transition: transform ease-in-out 1s, opacity ease-in-out .6s;
+}
+
+.slide1{
+    background-image: url(https://hobbirukodelie.ru/wp-content/uploads/2019/02/amiguramy1.jpg);
+}
+.slide2{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH5VSYyaLkHHdjUhm6mRmePZm6ZP8FVzJVRg&usqp=CAU);
+}
+.slide3{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlNpP_ZvfNTB6yyEWkIsD_JwHog8V67uuF1Q&usqp=CAU);
+}
+.slide4{
+    background-image: url(https://handmade-paradise.ru/wp-content/uploads/2017/03/Lukovichnyie-tsvetyi-kukolki-amigurumi-7.jpg);
+}
+.slide5{
+    background-image: url(https://vplate.ru/images/article/croppedtop/450-255/2020/03/vse-o-neobychnyh-kuklah-amigurumi.png);
+}
+
+.controls{
+    display: grid;
+    justify-content: end;
+    grid-template-columns: repeat(5, 1vw);
+    grid-gap: 2vw;
+    margin-right: 2vw;
+}
+
+.wrapper label{
+    cursor: pointer;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    border: 2px solid darkolivegreen;
+    transition: background ease-in-out .5s;
+}
+
+
+
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+    background: darkolivegreen;
+}
+
+.wrapper label:hover{
+    transition: border-color ease .5s;
+    border-color: rgb(179, 213, 120);
+    background: rgb(179, 213, 120)
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
+}
