@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    padding: 0 20vw;
+    padding: 0 10vw;
     background-image: url(https://kartinkin.net/uploads/posts/2021-01/1610205929_6-p-spokoinii-zelenii-fon-10.jpg);
 }
 h1{
@@ -38,8 +38,21 @@ h1{
     width: inherit;
     opacity: 0;
     z-index: 0;
-    transform: translateX(100vw);
-    transition: transform ease-in-out 1s, opacity ease-in-out .6s;
+    transform: scale(0.8);
+    transition: all .5s ease-in-out;
+}
+
+.text{
+    display: none;
+}
+.text1, .text2, .text3,
+.text4, .text5{
+    font-size: 32px;
+    color: darkolivegreen;
+    opacity: 0;
+    z-index: 0;
+    transform: scale(0.8);
+    transition: transform .5s ease-in-out ;
 }
 
 .slide1{
@@ -72,10 +85,8 @@ h1{
     width: 4vh;
     border-radius: 50%;
     border: 2px solid darkolivegreen;
-    transition: background ease-in-out .5s;
+    transition: all ease-in-out .5s;
 }
-
-
 
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
@@ -99,4 +110,17 @@ h1{
     opacity: 1;
     z-index: 1;
     transform: scale(1);
+}
+
+
+#slide1:checked ~ .textBlock > .text1,
+#slide2:checked ~ .textBlock > .text2,
+#slide3:checked ~ .textBlock > .text3,
+#slide4:checked ~ .textBlock > .text4,
+#slide5:checked ~ .textBlock > .text5{
+    display: block;
+    opacity: 1;
+    z-index: 1;
+    transform: scaleX(1);
+    transition: transform .5s ease-in-out ;
 }
