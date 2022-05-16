@@ -41,7 +41,15 @@ h1{
     transform: scale(0.8);
     transition: all .5s ease-in-out;
 }
-
+.underSlide{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.textBlock{
+    text-align: start;
+    margin: 0;
+}
 .text{
     display: none;
     font-size: 32px;
@@ -71,12 +79,15 @@ h1{
     border: 2px solid darkolivegreen;
     transition: all ease-in-out .5s;
 }
+.underSlideMedia{
+    display: none;
+}
 
-#slide1:checked ~ .controls label:nth-of-type(1),
-#slide2:checked ~ .controls label:nth-of-type(2),
-#slide3:checked ~ .controls label:nth-of-type(3),
-#slide4:checked ~ .controls label:nth-of-type(4),
-#slide5:checked ~ .controls label:nth-of-type(5) {
+#slide1:checked ~ .underSlide .controls label:nth-of-type(1),
+#slide2:checked ~ .underSlide .controls label:nth-of-type(2),
+#slide3:checked ~ .underSlide .controls label:nth-of-type(3),
+#slide4:checked ~ .underSlide .controls label:nth-of-type(4),
+#slide5:checked ~ .underSlide .controls label:nth-of-type(5) {
     background: rgb(90, 118, 42);
 }
 
@@ -97,11 +108,11 @@ h1{
 }
 
 
-#slide1:checked ~ .textBlock > .text1,
-#slide2:checked ~ .textBlock > .text2,
-#slide3:checked ~ .textBlock > .text3,
-#slide4:checked ~ .textBlock > .text4,
-#slide5:checked ~ .textBlock > .text5{
+#slide1:checked ~ .underSlide .textBlock > .text1,
+#slide2:checked ~ .underSlide .textBlock > .text2,
+#slide3:checked ~ .underSlide .textBlock > .text3,
+#slide4:checked ~ .underSlide .textBlock > .text4,
+#slide5:checked ~ .underSlide .textBlock > .text5{
     display: block;
     opacity: 1;
     z-index: 1;
@@ -113,16 +124,41 @@ h1{
     body{
         padding: 0 10vw;
     }
+    .underSlide{
+        display: none;
+    }
+    .underSlideMedia{
+        display: block;
+    }
     .controls{
         display: grid;
         justify-content: center;
         grid-template-columns: repeat(5, 1vw);
         grid-gap: 3vw;
     }
+
+#slide1:checked ~ .underSlideMedia .textBlock > .text1,
+#slide2:checked ~ .underSlideMedia .textBlock > .text2,
+#slide3:checked ~ .underSlideMedia .textBlock > .text3,
+#slide4:checked ~ .underSlideMedia .textBlock > .text4,
+#slide5:checked ~ .underSlideMedia .textBlock > .text5{
+    display: block;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+    transition: all .5s .5s, opacity .5s;
+}
+
 }
 @media screen and (min-width: 450px) and (max-width: 749px) {
     body{
         padding: 0 10vw;
+    }
+    .underSlide{
+        display: none;
+    }
+    .underSlideMedia{
+        display: block;
     }
     .controls{
         display: grid;
@@ -130,11 +166,30 @@ h1{
         grid-template-columns: repeat(5, 1vw);
         grid-gap: 5vw;
     }
+
+    #slide1:checked ~ .underSlideMedia .textBlock > .text1,
+    #slide2:checked ~ .underSlideMedia .textBlock > .text2,
+    #slide3:checked ~ .underSlideMedia .textBlock > .text3,
+    #slide4:checked ~ .underSlideMedia .textBlock > .text4,
+    #slide5:checked ~ .underSlideMedia .textBlock > .text5{
+        display: block;
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0);
+        transition: all .5s .5s, opacity .5s;
+    }
+    
 }
 
-@media screen and (min-width: 0px) and (max-width: 449px) {
+@media screen and (min-width: 100px) and (max-width: 449px) {
     body{
         padding: 0 10vw;
+    }
+    .underSlide{
+        display: none;
+    }
+    .underSlideMedia{
+        display: block;
     }
     .controls{
         display: grid;
@@ -142,5 +197,18 @@ h1{
         grid-template-columns: repeat(5, 1vw);
         grid-gap: 6vw;
     }
+
+#slide1:checked ~ .underSlideMedia .textBlock > .text1,
+#slide2:checked ~ .underSlideMedia .textBlock > .text2,
+#slide3:checked ~ .underSlideMedia .textBlock > .text3,
+#slide4:checked ~ .underSlideMedia .textBlock > .text4,
+#slide5:checked ~ .underSlideMedia .textBlock > .text5{
+    display: block;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+    transition: all .5s .5s, opacity .5s;
+}
+
 }
 
