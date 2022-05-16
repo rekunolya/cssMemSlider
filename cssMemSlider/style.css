@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    padding: 0 10vw;
+    padding: 0 20vw;
     background-image: url(https://kartinkin.net/uploads/posts/2021-01/1610205929_6-p-spokoinii-zelenii-fon-10.jpg);
 }
 h1{
@@ -14,7 +14,7 @@ h1{
 }
 
 .wrapper{
-    height: 50vh;
+    height: 70vh;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -44,33 +44,17 @@ h1{
 
 .text{
     display: none;
-}
-.text1, .text2, .text3,
-.text4, .text5{
     font-size: 32px;
     color: darkolivegreen;
     opacity: 0;
-    z-index: 0;
-    transform: scale(0.8);
-    transition: transform .5s ease-in-out ;
+    transform: translateY(100%);
+    transition: transform .5s .5s, opacity .5s;
 }
 
-.slide1{
-    background-image: url(https://hobbirukodelie.ru/wp-content/uploads/2019/02/amiguramy1.jpg);
+.slides img{
+    width: 100%;
+    height: 100%;
 }
-.slide2{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH5VSYyaLkHHdjUhm6mRmePZm6ZP8FVzJVRg&usqp=CAU);
-}
-.slide3{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlNpP_ZvfNTB6yyEWkIsD_JwHog8V67uuF1Q&usqp=CAU);
-}
-.slide4{
-    background-image: url(https://handmade-paradise.ru/wp-content/uploads/2017/03/Lukovichnyie-tsvetyi-kukolki-amigurumi-7.jpg);
-}
-.slide5{
-    background-image: url(https://vplate.ru/images/article/croppedtop/450-255/2020/03/vse-o-neobychnyh-kuklah-amigurumi.png);
-}
-
 .controls{
     display: grid;
     justify-content: end;
@@ -121,6 +105,42 @@ h1{
     display: block;
     opacity: 1;
     z-index: 1;
-    transform: scaleX(1);
-    transition: transform .5s ease-in-out ;
+    transform: translateY(0);
+    transition: all .5s .5s, opacity .5s;
 }
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+    body{
+        padding: 0 10vw;
+    }
+    .controls{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(5, 1vw);
+        grid-gap: 3vw;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 749px) {
+    body{
+        padding: 0 10vw;
+    }
+    .controls{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(5, 1vw);
+        grid-gap: 5vw;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 449px) {
+    body{
+        padding: 0 10vw;
+    }
+    .controls{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(5, 1vw);
+        grid-gap: 6vw;
+    }
+}
+
