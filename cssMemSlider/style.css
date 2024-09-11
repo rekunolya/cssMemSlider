@@ -116,10 +116,19 @@ h1{
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
+    .slider__wrapper{
+        padding: 5vw 5vw 0;
+    }
+    .wrapper{
+        height: 60vh;
+    }
+    .slider {
+        margin-bottom: 5vw;
+    }
     .underSlide{
         flex-direction: column-reverse;
-        row-gap: 1vw;
+        row-gap: 5vw;
     }
 }
 
