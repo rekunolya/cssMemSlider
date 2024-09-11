@@ -95,7 +95,6 @@ h1{
      animation-duration: 1s;
 }
 
-
 #slide1:checked ~ .underSlide .textBlock > .text1,
 #slide2:checked ~ .underSlide .textBlock > .text2,
 #slide3:checked ~ .underSlide .textBlock > .text3,
@@ -114,7 +113,6 @@ h1{
     }
     to {
         transform: scale(1);
-
     }
 }
 
@@ -123,6 +121,5 @@ h1{
         flex-direction: column-reverse;
         row-gap: 1vw;
     }
-
 }
 
