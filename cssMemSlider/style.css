@@ -130,5 +130,9 @@ h1{
         flex-direction: column-reverse;
         row-gap: 5vw;
     }
+
+    .textBlock{
+        align-items: flex-start;
+    }
 }
 
